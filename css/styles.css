@@ -233,6 +233,11 @@ body {
   fill: var(--primary-black-color);
   cursor: pointer;
 }
+.button-close:hover .button-close-svg,
+.button-close:focus .button-close-svg {
+  fill: var(--accent-color);
+}
+
 .button.primary {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
@@ -777,13 +782,34 @@ body {
   color: #757575;
 }
 .form-field-yes {
-  display: block;
+  display: inline-block;
 }
 .label-yes {
   margin-bottom: 0;
   font-size: 14px;
   line-height: 1.71;
   color: #757575;
+  margin-left: 32px;
+}
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+.label-yes::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  margin-left: 8px;
+}
+.checkbox:checked ~ .label-yes::after {
+  background-color: var(--accent-color);
 }
 .form-field-yes input[type="checkbox"] {
   /* width: 16px;
@@ -791,6 +817,7 @@ body {
   background: #212121; */
 }
 .form-checkbox {
+  position: relative;
   margin-bottom: 30px;
 }
 .form-field input {
@@ -816,7 +843,28 @@ body {
   line-height: 1.14;
   letter-spacing: 0.01em;
 }
-
+.form-field input::placeholder {
+}
+.form-field {
+  position: relative;
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  fill: var(--title-text-color);
+}
+.form-input:focus ~ .form-icon,
+.form-input:hover ~ .form-icon {
+  fill: var(--accent-color);
+}
+.form-input:focus,
+.form-input:hover {
+  border: 1px solid var(--accent-color);
+}
+.form-input placeholder {
+  margin-left: 42px;
+}
 .button-modal-submit {
   display: flex;
   justify-content: center;
