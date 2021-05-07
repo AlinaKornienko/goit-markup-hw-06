@@ -732,14 +732,12 @@ body {
   width: 528px;
   height: 581px;
   padding: 40px;
-  outline: 1px solid tomato;
   margin-left: auto;
   margin-right: auto;
 }
 .form-footer {
   width: 528px;
   min-height: 86px;
-  outline: 1px solid tomato;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -781,10 +779,10 @@ body {
   letter-spacing: 0.01em;
   color: #757575;
 }
-.form-field-yes {
+.form-field-confirm {
   display: inline-block;
 }
-.label-yes {
+.label-confirm {
   margin-bottom: 0;
   font-size: 14px;
   line-height: 1.71;
@@ -801,7 +799,7 @@ body {
   appearance: none;
   position: absolute;
 }
-.label-yes::before {
+.label-confirm::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -818,17 +816,12 @@ body {
   background-position: center;
   background-size: contain;
 }
-.checkbox:checked + .label-yes::before {
+.checkbox:checked + .label-confirm::before {
   background-image: url(../images/icons/Checked.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 11px 8px;
   background-color: var(--accent-color);
-}
-.form-field-yes input[type="checkbox"] {
-  /* width: 16px;
-  height: 15px;
-  background: #212121; */
 }
 .form-checkbox {
   position: relative;
@@ -837,11 +830,13 @@ body {
 .form-field input {
   margin: 0;
   padding: 0;
+  padding-left: 42px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
   font-size: 16px;
+  cursor: pointer;
 }
 .form-field textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -850,6 +845,12 @@ body {
   padding: 12px 16px;
   font-size: 16px;
   height: 120px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.textarea:hover,
+.textarea:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
 }
 .form-field textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
@@ -868,10 +869,19 @@ body {
   left: 12px;
   fill: var(--title-text-color);
 }
-.form-input:focus ~ .form-icon {
+.form-input {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input ~ .form-icon,
+.form-input ~ .form-icon {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus ~ .form-icon,
+.form-input:hover ~ .form-icon {
   fill: var(--accent-color);
 }
-.form-input:focus {
+.form-input:focus,
+.form-input:hover {
   border: 1px solid var(--accent-color);
 }
 .button-modal-submit {
