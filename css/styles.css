@@ -789,7 +789,11 @@ body {
   font-size: 14px;
   line-height: 1.71;
   color: #757575;
-  margin-left: 32px;
+  margin-left: 35px;
+}
+.checkbox-link {
+  color: var(--accent-color);
+  text-decoration-line: underline;
 }
 .checkbox {
   -webkit-appearance: none;
@@ -797,19 +801,26 @@ body {
   appearance: none;
   position: absolute;
 }
-.label-yes::after {
+.label-yes::before {
   position: absolute;
   top: 0;
   left: 0;
   content: " ";
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: tomato;
-  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--title-text-color);
+  border-radius: 3px;
+  margin-right: 7px;
+  margin-left: 12px;
 }
-.checkbox:checked ~ .label-yes::after {
+.checkbox:checked + .label-yes::before {
+  background-image: url(../images/icons/Checked.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 .form-field-yes input[type="checkbox"] {
   /* width: 16px;
