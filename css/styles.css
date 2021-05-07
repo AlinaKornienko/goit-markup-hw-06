@@ -854,16 +854,11 @@ body {
   left: 12px;
   fill: var(--title-text-color);
 }
-.form-input:focus ~ .form-icon,
-.form-input:hover ~ .form-icon {
+.form-input:focus ~ .form-icon {
   fill: var(--accent-color);
 }
-.form-input:focus,
-.form-input:hover {
+.form-input:focus {
   border: 1px solid var(--accent-color);
-}
-.form-input placeholder {
-  margin-left: 42px;
 }
 .button-modal-submit {
   display: flex;
